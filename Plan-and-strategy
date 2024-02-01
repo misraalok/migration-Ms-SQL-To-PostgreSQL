@@ -1,0 +1,48 @@
+2. Use any method or toolkit to migrate this to PostGRE.
+
+Albatross Cloud Suites.
+
+Create a runbook to explain the steps involved in configuration, mentioning the special aspects to be considered based on your own experience. 
+
+1:	Prerequisites:
+2:	Create schema and table:
+3:	Export all data to csv.sql
+4:	Generate COPY script for PostgreSQL.sql
+5:	Verify data after export.sql
+6:	Create all PPrimary and if any unique constraints.sql
+7:	Create all foreign keys.sql
+8:	Create all non clustered and filter indexes.sql
+9:	Apply maintananece plan (daily/weekly/monthly/quaterly/hiferly/Yearly)
+10:	Data base backup.
+
+3. Any incompatibility needs to be noted and an approach identified for fixing that out. 
+
+Monstly datatypes and during COPY data all data should be COPY (PostgreSQL) without any error.
+
+B) Migration Strategy 
+
+1. A client has an SQL Server database that has SSIS jobs, and a Service Broker configured on it. 
+The database is approximately 10TB in size and grows about 10GB monthly. It currently uses 24-core VCPU and 256GB of RAM under SQL Enterprise Edition 2016. 
+This is a transactional database that has a max downtime limit of 4 hours on special update events.
+ 
+Primary data can be move during real time, without any business impact, And delta portion we need to plan during 4 hours.
+
+2. What will be the strategy to migrate such a database to PostGRE considering the size and transactional volume? Mention any tooling (open-source or proprietary) that can ease out this process. 
+
+
+3. What can be the issues being faced and possible mitigation plan? 
+
+Mostly bandwidth between data transfer between source to destination location either via scp or via RSYNC (depends on what bandwidths are available) And after that Data COPY without any error (Data types should be matched or fixed according to usages)
+
+4. What will be the roadmap for the transition and what factors will determine the timelines of such a migration?
+
+1:	Prerequisites:
+2:	Create schema and table:
+3:	Export all data to csv.sql
+4:	Generate COPY script for PostgreSQL.sql
+5:	Verify data after export.sql
+6:	Create all PPrimary and if any unique constraints.sql
+7:	Create all foreign keys.sql
+8:	Create all non clustered and filter indexes.sql
+9:	Apply maintananece plan (daily/weekly/monthly/quaterly/hiferly/Yearly)
+10:	Data base backup.
